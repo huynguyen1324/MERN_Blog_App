@@ -36,6 +36,14 @@ app.get("/posts/:slug", (req, res) => {
   res.json(post);
 });
 
+app.delete("/posts/:slug", (req, res) => {
+  const slug = req.params.slug;  
+  // Luôn luôn tìm được đúng slug để xoá post
+  const index = Posts.findIndex(p => p.slug === slug);
+  Posts.splice(index, 1);
+  res.json({ message: "Post deleted successfully" });
+});
+
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
   const foundUser = Users.find(u => u.username === username && u.password === password);

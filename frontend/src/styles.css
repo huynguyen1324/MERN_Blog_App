@@ -17,9 +17,19 @@ p {
   display: block;
 }
 
+#logout {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
 #blog-form * {
   margin: 5px;
   display: block;
+}
+
+#search-post-form {
+  float: right;  
 }
 
 #search-post-form * {
@@ -30,4 +40,9 @@ p {
 #new-post-form * {
   margin: 5px;
   display: block;
+}
+
+#modify-post * {
+  margin-right: 5px;
+  display: inline;
 }

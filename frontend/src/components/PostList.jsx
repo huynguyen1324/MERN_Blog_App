@@ -40,10 +40,12 @@ export default function PostList() {
   return (
     <div>
       <h2>BLOG Page</h2>
+      <button onClick={() => navigate("/new-post")}>New post</button>
       <form id="search-post-form" onSubmit={handleSearch}>
         <input type="text" placeholder="Search post..." value={keyword} onChange={(e) => setKeyword(e.target.value)} />
         <button type="submit">Search</button>
       </form>
+      <br />
       <hr />
       {error && <p>Error fetching data</p>}
       {posts.length === 0 && !error && <p>No posts found</p>}
@@ -52,8 +54,6 @@ export default function PostList() {
           <h3>{post.title}</h3>
         </Link>
       ))}
-      <hr />
-      <button onClick={() => navigate("/new-post")}>New post</button>
     </div>
   );
 }

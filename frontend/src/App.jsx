@@ -19,8 +19,9 @@ export default function App() {
     if(confirm("Bạn có chắc muốn đăng xuất?")) {
       setUser(null);
       localStorage.removeItem("user");
+      return <Navigate to="/login" replace></Navigate>
     } else {
-      
+
     }
   }
 
@@ -31,7 +32,7 @@ export default function App() {
         <Link to="/posts">Posts</Link>
         <Link to="/about">About</Link>
         {!user && <Link to="/login">Login</Link>}
-        {user && <Link to="/login" onClick={logout}>Logout</Link>}
+        {user && <span id="logout" onClick={logout}>Logout</span>}
       </nav>
 
       <Routes>
