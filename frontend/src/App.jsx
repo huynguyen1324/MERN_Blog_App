@@ -7,6 +7,7 @@ import PostList from "./components/PostList";
 import Post from "./components/Post";
 import NewPost from "./components/NewPost";
 import Login from "./components/Login";
+import EditPost from "./components/EditPost";
 
 export default function App() {
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -40,8 +41,10 @@ export default function App() {
         <Route path="/posts" >
             <Route index element={<Protected><PostList /></Protected>} />
             <Route path=":slug" element={<Protected><Post /></Protected>} />
+            <Route path=":slug/edit" element={<Protected><EditPost /></Protected>} />
         </Route>
         <Route path="/new-post" element={<Protected><NewPost /></Protected>} />
+
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login setUser={setUser} />}/>
       </Routes>

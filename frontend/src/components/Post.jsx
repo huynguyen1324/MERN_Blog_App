@@ -24,7 +24,7 @@ export default function PostDetail() {
   }, []);
 
   const handleEditPost = async () => {
-
+    navigate(`/posts/${slug}/edit`);
   }
 
   const handleDeletePost = async () => {

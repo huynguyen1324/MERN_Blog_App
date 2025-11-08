@@ -24,17 +24,25 @@ app.get("/posts/search", (req, res) => {
   res.json(posts);
 });
 
+app.get("/posts/:slug", (req, res) => {
+  const slug = req.params.slug;
+  const post = Posts.find(p => p.slug === slug);
+  res.json(post);
+});
+
 app.post("/posts/new", (req, res) => {
   const post = req.body;
   Posts.push(post);
   res.sendStatus(200);
 });
 
-app.get("/posts/:slug", (req, res) => {
+app.put("/posts/:slug", (req, res) => {
   const slug = req.params.slug;
-  const post = Posts.find(p => p.slug === slug);
-  res.json(post);
-});
+  const index = Posts.findIndex(p => p.slug === slug);
+  const updated_post = req.body;
+  Posts[index] = updated_post;
+  res.json({ message: "Post updated successfully" });
+})
 
 app.delete("/posts/:slug", (req, res) => {
   const slug = req.params.slug;  
