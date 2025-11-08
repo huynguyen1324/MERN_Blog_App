@@ -1,0 +1,33 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+}
+
+#nav * {
+  padding: 5px;
+  display: inline;
+}
+
+#login-form * {
+  margin: 5px;
+  display: block;
+}
+
+#blog-form * {
+  margin: 5px;
+  display: block;
+}
+
+#search-post-form * {
+  margin-right: 5px;
+  display: inline;
+}
+
+#new-post-form * {
+  margin: 5px;
+  display: block;
+}
