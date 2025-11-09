@@ -52,7 +52,7 @@ export default function EditPost() {
 
     return (
         <div>
-            <h2>BLOG Page</h2>
+            <h2>EDIT {title}</h2>
             <hr />
             <form onSubmit={handleSubmit} id="new-post-form">
                 <p>Enter slug</p>
