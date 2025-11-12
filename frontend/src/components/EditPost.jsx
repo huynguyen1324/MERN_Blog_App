@@ -14,6 +14,7 @@ export default function EditPost() {
         const fetchData = async () => {
             try {
                 const res = await fetch(`${API_URL}/posts/${slug}`);
+                console.log("EditPost URL: ", `${API_URL}/posts/${slug}`);
                 const data = await res.json();
                 setTitle(data.title);
                 setContent(data.content);
@@ -52,14 +53,15 @@ export default function EditPost() {
 
     return (
         <div>
-            <h2>EDIT {title}</h2>
+            <h2>EDIT POST</h2>
+            <p>Đang tồn tại lỗi edit slug chưa fix được</p>
             <hr />
             <form onSubmit={handleSubmit} id="new-post-form">
-                <p>Enter slug</p>
-                <input type="text" value={slug} onChange={(e) => setSlug(e.target.value)} />
-                <p>Enter title</p>
+                <p>Edit slug</p>
+                <input type="text" value={slug} onChange={(e) => setslug(e.target.value)} />
+                <p>Edit title</p>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <p>Enter content</p>
+                <p>Edit content</p>
                 <input type="text" value={content} onChange={(e) => setContent(e.target.value)} />
                 <button type="submit">Submit</button>
             </form>

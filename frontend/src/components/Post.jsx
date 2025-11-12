@@ -13,7 +13,7 @@ export default function PostDetail() {
     const fetchPost = async () => {
       try {
         const res = await fetch(`${API_URL}/posts/${slug}`);
-        console.log("Post URL: ", `${API_URL}/posts/${slug}`);
+        console.log("Post URL: " + `${API_URL}/posts/${slug}`);
         const data = await res.json();
         setPost(data);
       } catch (err) {
@@ -33,6 +33,7 @@ export default function PostDetail() {
       const res = await fetch(`${API_URL}/posts/${slug}`, {
         method: "delete"
       });
+      console.log("DeletePost URL: " + `${API_URL}/posts/${slug}`);
       navigate("/posts");
     }
   }

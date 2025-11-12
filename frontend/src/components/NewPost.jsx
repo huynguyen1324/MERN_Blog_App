@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function NewPost() {
@@ -18,8 +18,9 @@ export default function NewPost() {
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({slug, title, content})
+                body: JSON.stringify({ slug, title, content })
             });
+            console.log("NewPost URL: " + `${API_URL}/posts/new`);
             alert("Successfully creating new post!!");
             navigate("/posts");
         } catch (err) {
